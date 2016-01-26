@@ -4,6 +4,8 @@ This SDK is developed based on project [**arduino-mqtt**](https://github.com/256
 
 Please note that this sdk doesn't support standard mqtt currently.
 
+You should Install **ArduinoJson** library from Library Manager arduino IDE.
+
 ## Example
 
 At first, we get MQTT broker and registration information. 
