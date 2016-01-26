@@ -6,7 +6,7 @@ Please note that this sdk doesn't support standard mqtt currently.
 
 ## Example
 
-The following example the MQTTClient to connect to Yunba message bus:
+At first, you should get broker url and your registration information. The detailed code under path **examples/Linkltone_yunba/** is for your reference.  
 
 ```c++
 #include <MQTTClient.h>
@@ -15,20 +15,41 @@ The following example the MQTTClient to connect to Yunba message bus:
 MQTTClient client;
 StaticJsonBuffer<200> jsonBuffer;
 
+const char yunba_appkey[] = "<your-appkey>";
 
 unsigned long lastMillis = 0;
 
+char broker_addr[56];
+uint16_t port;
+char client_id[56];
+char username[56];
+char password[56];
+char device_id[56];
+
+bool get_host_v2(const char *appkey, char *url) {
+  ...
+}
+
+bool setup_with_appkey_and_devid(const char* appkey, const char *deviceid) {
+  ...
+}
+```
+
+
+The following example the MQTTClient to connect to Yunba message bus:
+
+```c++
+
 void setup() {
-  Bridge.begin();
   Serial.begin(9600);
-  client.begin("<YUNBA-mqtt-broker>", net);
+  client.begin(broker_addr, port, net);
 
   connect();
 }
 
 void connect() {
   Serial.print("connecting...");
-  while (!client.connect("<client-id>", "<username>", "<password>")) {
+  while (!client.connect(client_id, username, password)) {
     Serial.print(".");
   }
 
@@ -66,6 +87,25 @@ void extMessageReceived(EXTED_CMD cmd, int status, String payload, unsigned int 
   Serial.print(" - ");
   Serial.print(payload);
 }
+```
+
+Please note that variable **net** can be defined different type.
+
+With Arduino Ethernet Shield:
+```c++
+EthernetClient net;
+```
+
+With Arduino WiFi Shield:
+
+```c++
+WiFiClient net;
+```
+
+LinkltOne WiFI:
+
+```c++
+LWiFiClient net;
 ```
 
 ## API
