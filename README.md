@@ -6,7 +6,7 @@ Please note that this sdk doesn't support standard mqtt currently.
 
 ## Example
 
-At first, you should get broker url and your registration information. The detailed code under path **examples/Linkltone_yunba/** is for your reference.  
+At first, we get MQTT broker and registration information. 
 
 ```c++
 #include <MQTTClient.h>
@@ -35,6 +35,7 @@ bool setup_with_appkey_and_devid(const char* appkey, const char *deviceid) {
 }
 ```
 
+You can find implemented source code under path **examples/Linkltone_yunba/YunbaWIFI.ino** for your reference.  
 
 The following example the MQTTClient to connect to Yunba message bus:
 
