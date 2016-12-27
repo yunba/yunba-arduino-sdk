@@ -2,7 +2,7 @@
 #define MQTT_CLIENT_H
 
 #ifndef MQTT_BUFFER_SIZE
-#define MQTT_BUFFER_SIZE 128
+#define MQTT_BUFFER_SIZE 256
 #endif
 
 #define MQTTCLIENT_QOS1 0
