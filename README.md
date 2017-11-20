@@ -1,5 +1,7 @@
 # yunba-arduino-sdk
 
+**声明：对于自行修改 sdk 而导致的问题，云巴恕不提供技术支持。如果对于 sdk 有个性化需求，可以联系商务定制开发：xieting@yunba.io**
+
 This SDK is developed based on project [**arduino-mqtt**](https://github.com/256dpi/arduino-mqtt.git) . This SDK should be compatible with these boards supported by [**arduino-mqtt**](https://github.com/256dpi/arduino-mqtt.git). It is only tested on Linkltone board now.
 
 Please note that this sdk doesn't support standard mqtt currently.
